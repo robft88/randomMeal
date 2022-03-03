@@ -1,0 +1,24 @@
+<mat-toolbar>
+    <span>randomMealApp</span>
+</mat-toolbar>
+<br><br>
+
+<h4 fxLayoutAlign="center center">Please, choose a category:</h4>
+<div fxLayoutAlign="center center">
+    <form [formGroup]="form">
+        <mat-form-field appearance="fill">
+            <mat-label>Category</mat-label>
+            <mat-select formControlName="category" placeholder="Categoría">
+                <mat-option *ngFor="let categ of categories" [value]="categ.strCategory">{{categ.strCategory}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+</div>
+<br><br>
+<h2 fxLayoutAlign="center center" *ngIf="meals">Your random meals</h2>
+<div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center" fxLayoutGap="20px" fxLayoutGap.xs="0px">
+    <div fxFlex="20" fxFlex.lg="15" fxFlex.sm="30" *ngFor="let meal of meals">
+        <app-card-meal [meal]="meal"></app-card-meal>
+    </div>
+</div>

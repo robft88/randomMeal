@@ -1,0 +1,9 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>{{meal.strMeal}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="{{meal.strMealThumb}}" alt="Photo of a Shiba Inu">
+    <mat-card-actions fxLayoutAlign="end">
+      <button mat-button (click)="openDetails(meal.idMeal)">More...</button>
+    </mat-card-actions>
+</mat-card>

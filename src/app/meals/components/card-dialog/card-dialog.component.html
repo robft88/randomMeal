@@ -1,0 +1,30 @@
+<div mat-dialog-content fxLayout="row" fxLayout.xs="column" fxLayoutGap="30px">
+
+    <div fxFlex="50" fxLayout.xs="column">
+        <img fxFlexFill [src]="meal.strMealThumb" alt="Photo of {{meal.strMeal}}">
+    </div>
+
+    <div fxFlex="50">
+        <h1>{{meal.strMeal}}</h1>
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center" fxLayoutAlign.xs="center start">
+            <mat-label>Category: <span>{{meal.strCategory}}</span></mat-label>
+            <mat-label>Origin: <span>{{meal.strArea}}</span></mat-label>
+            <mat-label>Tags: <span>{{meal.strTags}}</span></mat-label>
+        </div>
+        <br>
+        <mat-divider></mat-divider>
+        <br>
+        <h2>Ingredients:</h2>
+        <div gdColumns="1fr 1fr 1fr" gdColumns.xs="1fr">
+            <span *ngFor="let ing of meal.strIngredients">▸{{ing | titlecase}}</span>
+        </div>
+        <br>
+        <mat-divider></mat-divider>
+        <br>
+        <h2>Preparation:</h2>
+        <p>{{meal.strInstructions}}</p>
+        <br>
+        <button mat-button color="warn" (click)="closeDialog()">Close</button>
+    </div>
+
+</div>
